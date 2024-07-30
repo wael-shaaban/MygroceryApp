@@ -1,9 +1,11 @@
 ﻿using groceryApp.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace groceryApp.Services
@@ -23,10 +25,10 @@ namespace groceryApp.Services
             {
                 var response = await data.Content.ReadAsStringAsync();
                 if (!string.IsNullOrEmpty(response))
-                    return JsonSerializer.Deserialize<IEnumerable<OfferModel>>(response, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true,
-                    });
+                {
+                    var puredata =  JsonConvert.DeserializeObject<IEnumerable<OfferModel>>(response);
+                    return puredata;
+                }
             }
             return Enumerable.Empty<OfferModel>();
         }

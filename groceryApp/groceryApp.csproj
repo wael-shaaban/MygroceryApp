@@ -59,26 +59,12 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Ubuntu-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Ubuntu-Regular.ttf" />
-	  <None Remove="Resources\Images\butter_cheese.jpg" />
 	  <None Remove="Resources\Images\bxs_cart.svg" />
 	  <None Remove="Resources\Images\bxs_category.svg" />
 	  <None Remove="Resources\Images\bxs_help.svg" />
 	  <None Remove="Resources\Images\bxs_home.svg" />
 	  <None Remove="Resources\Images\bxs_list.svg" />
 	  <None Remove="Resources\Images\bxs_user.svg" />
-	  <None Remove="Resources\Images\dairy.jpg" />
-	  <None Remove="Resources\Images\eggs.jpg" />
-	  <None Remove="Resources\Images\eggs_meat.jpg" />
-	  <None Remove="Resources\Images\exotic_fruits.jpg" />
-	  <None Remove="Resources\Images\fruits.jpg" />
-	  <None Remove="Resources\Images\green_vegetables.jpg" />
-	  <None Remove="Resources\Images\leafy_vegetables.jpg" />
-	  <None Remove="Resources\Images\meat.jpg" />
-	  <None Remove="Resources\Images\milk_curd_yogurt.jpg" />
-	  <None Remove="Resources\Images\salads.jpg" />
-	  <None Remove="Resources\Images\seafood.jpg" />
-	  <None Remove="Resources\Images\seasonal_fruits.jpg" />
-	  <None Remove="Resources\Images\vegetables.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -88,6 +74,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>

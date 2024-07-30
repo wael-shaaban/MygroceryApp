@@ -22,7 +22,7 @@ namespace grocercy.Api
            server => server.UseSqlServer
            (builder.Configuration.GetConnectionString(DatabaseConstants.GerogercyDBStringKey)));
 
-          var app = builder.Build();
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -37,8 +37,23 @@ namespace grocercy.Api
 
 
             app.MapControllers();
+            var mastersGroup = app.MapGroup("/masters")
+                         .AllowAnonymous();
 
-            app.Run();
+            mastersGroup.MapGet("/categories", async (DataContext context) =>
+                TypedResults.Ok(await context.Categories
+                .AsNoTracking()
+                .ToArrayAsync()
+                )
+            );
+            mastersGroup.MapGet("/offers", async (DataContext context) =>
+                TypedResults.Ok(await context.Offers
+                .AsNoTracking()
+                .ToArrayAsync()
+                )
+            );
+
+            app.Run("https://localhost:54321");
         }
     }
 }

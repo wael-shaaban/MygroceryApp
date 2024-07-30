@@ -74,7 +74,7 @@
                             HeightRequest="180"
                             WidthRequest="300">
                     <Grid>
-                            <BoxView Color="{Binding Color,Converter={StaticResource StringToColor}}" Opacity="0.5"/>
+                            <BoxView Color="{Binding Color}" Opacity="0.5"/>
                     <Grid RowDefinitions="Auto,*,Auto" Padding="10">
                         <Label Text="{Binding Title , StringFormat='{0} !!!'}" Grid.Row="0" Style="{StaticResource H3}"/>
                         <Label Text="{Binding Description}" Grid.Row="1" VerticalOptions="Center" FontSize="16"/>

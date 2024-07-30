@@ -1,5 +1,6 @@
 ﻿using groceryApp.Models;
 using Microsoft.Extensions.Http;
+using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text.Json;
 
@@ -24,10 +25,7 @@ namespace groceryApp.Services
                 {
                     var response = await data.Content.ReadAsStringAsync();
                     if (!string.IsNullOrEmpty(response))
-                        _categories = JsonSerializer.Deserialize<IEnumerable<CategoryModel>>(response, new JsonSerializerOptions
-                        {
-                            PropertyNameCaseInsensitive = true,
-                        });
+                    _categories = JsonConvert.DeserializeObject<IEnumerable<CategoryModel>>(response);
                 }
                 else
                 {
